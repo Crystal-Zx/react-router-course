@@ -12,6 +12,7 @@ import Contact, {
 import EditContact, { action as editAction } from '@/routes/edit'
 import { action as destroyAction } from '@/routes/destroy'
 import Index from './routes'
+import NotFoundPage from './routes/notFound'
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             path: 'contacts/:contactId/destroy',
             action: destroyAction,
             errorElement: <div>Oops! There was an error.</div>
+          },
+          {
+            path: '*',
+            element: <NotFoundPage />
           }
         ]
       }
